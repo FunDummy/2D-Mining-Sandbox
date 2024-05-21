@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp7p3lycclbbr"]
+
+[ext_resource type="PackedScene" uid="uid://crokjugu1888g" path="res://game/block entities/base_block_entity.tscn" id="1_5glxy"]
+[ext_resource type="Script" path="res://game/block entities/jump pad/jump_pad.gd" id="2_5atb6"]
+[ext_resource type="Texture2D" uid="uid://b0rk4xubuw8i1" path="res://game/block entities/jump pad/jump_pad.png" id="2_8lr3c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cb3xp"]
+size = Vector2(32, 1)
+
+[node name="Jump pad" instance=ExtResource("1_5glxy")]
+collision_layer = 128
+script = ExtResource("2_5atb6")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_8lr3c")
+
+[node name="CollisionShape2D" parent="." index="1"]
+disabled = false
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(16, -0.5)
+shape = SubResource("RectangleShape2D_cb3xp")
