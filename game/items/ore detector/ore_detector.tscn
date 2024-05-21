@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy0aohijr0cvm"]
+
+[ext_resource type="Script" path="res://game/items/ore detector/ore_detector.gd" id="1_avfpv"]
+
+[node name="Ore Detector" type="Node2D"]
+script = ExtResource("1_avfpv")
+on_color = Color(6.30513e-06, 0.822209, 0.0990222, 1)
+off_color = Color(0.999931, 0.452483, 0.384032, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.88729, 0.455962, 0.239001, 1)
+polygon = PackedVector2Array(-16, -8, -24, 16, 24, 16, 16, -8)
+
+[node name="Light" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-12, -8, -12, -16, -6, -22, 0, -22, 6, -22, 12, -16, 12, -8)
