@@ -1,0 +1,40 @@
+[gd_scene load_steps=12 format=3 uid="uid://dek21qkd2kaom"]
+
+[ext_resource type="PackedScene" uid="uid://c510uo66y1t16" path="res://game/scenarios/base_scenario.tscn" id="1_mm3wl"]
+[ext_resource type="Script" path="res://game/scenarios/fireworks challenge/fireworks_challenge.gd" id="2_ht0k3"]
+[ext_resource type="Resource" uid="uid://8qexa73jgb56" path="res://game/blocks/godot block/godot_block.tres" id="3_rords"]
+[ext_resource type="Resource" uid="uid://de53vt430ls03" path="res://game/items/pickaxe/pickaxe.tres" id="3_x0ovr"]
+[ext_resource type="Script" path="res://game/player/inventory/inventory_item.gd" id="4_dnyqx"]
+[ext_resource type="Script" path="res://game/player/player_loadout.gd" id="5_uiapa"]
+[ext_resource type="Script" path="res://game/game_settings.gd" id="6_x3jcb"]
+[ext_resource type="PackedScene" uid="uid://baufx6u2wjni6" path="res://game/player/characters/El Classico/el_classico.tscn" id="7_5bdu2"]
+
+[sub_resource type="Resource" id="Resource_7hw57"]
+script = ExtResource("4_dnyqx")
+item = ExtResource("3_x0ovr")
+count = 1
+
+[sub_resource type="Resource" id="Resource_p1pfs"]
+script = ExtResource("5_uiapa")
+inventory_items = Array[ExtResource("4_dnyqx")]([SubResource("Resource_7hw57")])
+
+[sub_resource type="Resource" id="Resource_tjkfc"]
+script = ExtResource("6_x3jcb")
+world_seed = 0
+player_spawn = Vector2i(0, 0)
+spawn_clearing_radius = 0
+respawn_on_death = true
+player_loadout = SubResource("Resource_p1pfs")
+
+[node name="Fireworks Challenge" instance=ExtResource("1_mm3wl")]
+script = ExtResource("2_ht0k3")
+win_block = ExtResource("3_rords")
+description = "Trigger the fireworks"
+countdown = 30
+settings = SubResource("Resource_tjkfc")
+can_toggle_cheats = false
+player_scene = ExtResource("7_5bdu2")
+
+[node name="Level Editor" parent="." index="3"]
+tile_set = null
+layer_0/tile_data = PackedInt32Array(262137, 6, 0, 327673, 6, 0, 393209, 6, 0, 458745, 6, 0, 524281, 6, 0, 589817, 6, 0, 655353, 6, 0, 720889, 6, 0, 262138, 6, 0, 327674, 6, 0, 393210, 6, 0, 458746, 6, 0, 524282, 6, 0, 589818, 6, 0, 655354, 6, 0, 720890, 6, 0, 262139, 6, 0, 327675, 6, 0, 393211, 6, 0, 458747, 6, 0, 524283, 6, 0, 589819, 6, 0, 655355, 6, 0, 720891, 6, 0, 262140, 6, 0, 327676, 6, 0, 393212, 6, 0, 458748, 6, 0, 524284, 6, 0, 589820, 6, 0, 655356, 6, 0, 720892, 6, 0, 262141, 6, 0, 327677, 6, 0, 393213, 6, 0, 458749, 6, 0, 524285, 6, 0, 589821, 6, 0, 655357, 6, 0, 720893, 6, 0, 262142, 6, 0, 327678, 6, 0, 393214, 6, 0, 458750, 6, 0, 524286, 6, 0, 589822, 6, 0, 655358, 6, 0, 720894, 6, 0, 262143, 6, 0, 327679, 6, 0, 393215, 6, 0, 458751, 6, 0, 524287, 6, 0, 589823, 6, 0, 655359, 6, 0, 720895, 6, 0, 196608, 6, 0, 262144, 6, 0, 327680, 6, 0, 393216, 3, 0, 458752, 6, 0, 524288, 6, 0, 589824, 6, 0, 655360, 6, 0, 196609, 6, 0, 262145, 6, 0, 327681, 6, 0, 393217, 6, 0, 458753, 6, 0, 524289, 6, 0, 589825, 6, 0, 655361, 6, 0, 196610, 6, 0, 262146, 6, 0, 327682, 6, 0, 393218, 6, 0, 458754, 6, 0, 524290, 6, 0, 589826, 6, 0, 655362, 6, 0, 196611, 6, 0, 262147, 6, 0, 327683, 6, 0, 393219, 6, 0, 458755, 6, 0, 524291, 6, 0, 589827, 6, 0, 655363, 6, 0, 196612, 6, 0, 262148, 6, 0, 327684, 6, 0, 393220, 6, 0, 458756, 6, 0, 524292, 6, 0, 589828, 6, 0, 655364, 6, 0, 196613, 6, 0, 262149, 6, 0, 327685, 6, 0, 393221, 6, 0, 458757, 6, 0, 524293, 6, 0, 589829, 6, 0, 655365, 6, 0, 196614, 6, 0, 262150, 6, 0, 327686, 6, 0, 393222, 6, 0, 458758, 6, 0, 524294, 6, 0, 589830, 6, 0, 655366, 6, 0, 196615, 6, 0, 262151, 6, 0, 327687, 6, 0, 393223, 6, 0, 458759, 6, 0, 524295, 6, 0, 589831, 6, 0, 655367, 6, 0, 196616, 6, 0, 262152, 6, 0, 327688, 6, 0, 393224, 6, 0, 458760, 6, 0, 524296, 6, 0, 589832, 6, 0, 655368, 6, 0)
